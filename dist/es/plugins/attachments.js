@@ -33,7 +33,7 @@ export var blobBufferUtil = {
   createBlobBuffer: function createBlobBuffer(data, type) {
     var blobBuffer;
 
-    console.log("test")
+    //this is a fix for electron to not convert strings to Buffers but to use blob by default
     if (isElectronRenderer && false) {
       // if we are inside of electron-renderer, always use the node-buffer
       return Buffer.from(data, {
